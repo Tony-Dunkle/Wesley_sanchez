@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wesley Sanchaz Official Store</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a; /* Dark background */
+            color: #e0e0e0; /* Light text */
+        }
+
+        .product-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #555;
+            border-radius: 10px;
+        }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: #777;
+            }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-black text-white py-4 px-6 md:px-12 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold tracking-wider rounded-md p-2 hover:bg-gray-800 transition-colors">
+                WESLEY SANCHAZ
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#shop" class="text-lg font-medium hover:text-gray-400 transition-colors rounded-md p-2 hover:bg-gray-800">Shop</a>
+                <a href="#tour" class="text-lg font-medium hover:text-gray-400 transition-colors rounded-md p-2 hover:bg-gray-800">Tour</a>
+                <a href="#about" class="text-lg font-medium hover:text-gray-400 transition-colors rounded-md p-2 hover:bg-gray-800">About</a>
+                <a href="#contact" class="text-lg font-medium hover:text-gray-400 transition-colors rounded-md p-2 hover:bg-gray-800">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black bg-opacity-95 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex justify-end p-6">
+                <button id="close-mobile-menu" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex flex-col items-center space-y-8 text-2xl">
+                <a href="#shop" class="text-white hover:text-gray-400 transition-colors" onclick="toggleMobileMenu()">Shop</a>
+                <a href="#tour" class="text-white hover:text-gray-400 transition-colors" onclick="toggleMobileMenu()">Tour</a>
+                <a href="#about" class="text-white hover:text-gray-400 transition-colors" onclick="toggleMobileMenu()">About</a>
+                <a href="#contact" class="text-white hover:text-gray-400 transition-colors" onclick="toggleMobileMenu()">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative h-[60vh] md:h-[80vh] flex items-center justify-center text-center overflow-hidden">
+            <!-- Background Image/Video Placeholder -->
+            <img src="https://placehold.co/1920x1080/222/fff?text=Wesley+Sanchaz+Hero" alt="Wesley Sanchaz Hero" class="absolute inset-0 w-full h-full object-cover opacity-70">
+            <div class="relative z-10 p-6 bg-black bg-opacity-50 rounded-lg shadow-xl max-w-2xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-lg">
+                    WESLEY SANCHAZ
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 mb-8">
+                    New Album: "Echoes of Tomorrow" Out Now!
+                </p>
+                <a href="#music" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg md:text-xl shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
+                    Listen Here
+                </a>
+            </div>
+        </section>
+
+        <!-- Shop Section -->
+        <section id="shop" class="py-16 px-6 md:px-12">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-white">Shop</h2>
+
+                <!-- Apparel Section -->
+                <h3 id="apparel" class="text-3xl font-semibold text-white mb-8 border-b border-gray-700 pb-4">Apparel</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
+                    <!-- Product Card 1 -->
+                    <div class="product-card bg-gray-800 rounded-xl shadow-lg overflow-hidden p-4 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x300/333/fff?text=T-Shirt" alt="Wesley Sanchaz T-Shirt" class="w-full h-auto rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold text-white mb-2">Echoes Tour T-Shirt</h4>
+                        <p class="text-gray-300 text-lg mb-4">$25.00</p>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition-colors">Add to Cart</button>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="product-card bg-gray-800 rounded-xl shadow-lg overflow-hidden p-4 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x300/333/fff?text=Hoodie" alt="Wesley Sanchaz Hoodie" class="w-full h-auto rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold text-white mb-2">"Tomorrow" Hoodie</h4>
+                        <p class="text-gray-300 text-lg mb-4">$55.00</p>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition-colors">Add to Cart</button>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="product-card bg-gray-800 rounded-xl shadow-lg overflow-hidden p-4 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x300/333/fff?text=Hat" alt="Wesley Sanchaz Hat" class="w-full h-auto rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold text-white mb-2">WS Logo Cap</h4>
+                        <p class="text-gray-300 text-lg mb-4">$20.00</p>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition-colors">Add to Cart</button>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="product-card bg-gray-800 rounded-xl shadow-lg overflow-hidden p-4 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x300/333/fff?text=Sweater" alt="Wesley Sanchaz Sweater" class="w-full h-auto rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold text-white mb-2">Signature Sweater</h4>
+                        <p class="text-gray-300 text-lg mb-4">$60.00</p>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition-colors">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Music Section -->
+                <h3 id="music" class="text-3xl font-semibold text-white mb-8 border-b border-gray-700 pb-4">Music</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
+                    <!-- Product Card 5 -->
+                    <div class="product-card bg-gray-800 rounded-xl shadow-lg overflow-hidden p-4 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x300/333/fff?text=Vinyl" alt="Echoes of Tomorrow Vinyl" class="w-full h-auto rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold text-white mb-2">Echoes of Tomorrow (Vinyl)</h4>
+                        <p class="text-gray-300 text-lg mb-4">$30.00</p>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition-colors">Add to Cart</button>
+                    </div>
+                    <!-- Product Card 6 -->
+                    <div class="product-card bg-gray-800 rounded-xl shadow-lg overflow-hidden p-4 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x300/333/fff?text=CD" alt="Echoes of Tomorrow CD" class="w-full h-auto rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold text-white mb-2">Echoes of Tomorrow (CD)</h4>
+                        <p class="text-gray-300 text-lg mb-4">$15.00</p>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition-colors">Add to Cart</button>
+                    </div>
+                    <!-- Product Card 7 -->
+                    <div class="product-card bg-gray-800 rounded-xl shadow-lg overflow-hidden p-4 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x300/333/fff?text=Digital" alt="Digital Album Download" class="w-full h-auto rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold text-white mb-2">Echoes of Tomorrow (Digital)</h4>
+                        <p class="text-gray-300 text-lg mb-4">$10.00</p>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition-colors">Purchase</button>
+                    </div>
+                    <!-- Product Card 8 -->
+                    <div class="product-card bg-gray-800 rounded-xl shadow-lg overflow-hidden p-4 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x300/333/fff?text=Single" alt="New Single" class="w-full h-auto rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold text-white mb-2">New Single: "Horizon"</h4>
+                        <p class="text-gray-300 text-lg mb-4">$2.00</p>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition-colors">Purchase</button>
+                    </div>
+                </div>
+
+                <!-- Accessories Section -->
+                <h3 id="accessories" class="text-3xl font-semibold text-white mb-8 border-b border-gray-700 pb-4">Accessories</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Product Card 9 -->
+                    <div class="product-card bg-gray-800 rounded-xl shadow-lg overflow-hidden p-4 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x300/333/fff?text=Phone+Case" alt="Wesley Sanchaz Phone Case" class="w-full h-auto rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold text-white mb-2">Album Art Phone Case</h4>
+                        <p class="text-gray-300 text-lg mb-4">$18.00</p>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition-colors">Add to Cart</button>
+                    </div>
+                    <!-- Product Card 10 -->
+                    <div class="product-card bg-gray-800 rounded-xl shadow-lg overflow-hidden p-4 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x300/333/fff?text=Poster" alt="Wesley Sanchaz Poster" class="w-full h-auto rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold text-white mb-2">Signed Tour Poster</h4>
+                        <p class="text-gray-300 text-lg mb-4">$12.00</p>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition-colors">Add to Cart</button>
+                    </div>
+                    <!-- Product Card 11 -->
+                    <div class="product-card bg-gray-800 rounded-xl shadow-lg overflow-hidden p-4 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x300/333/fff?text=Keychain" alt="Wesley Sanchaz Keychain" class="w-full h-auto rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold text-white mb-2">WS Keychain</h4>
+                        <p class="text-gray-300 text-lg mb-4">$8.00</p>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition-colors">Add to Cart</button>
+                    </div>
+                    <!-- Product Card 12 -->
+                    <div class="product-card bg-gray-800 rounded-xl shadow-lg overflow-hidden p-4 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x300/333/fff?text=Sticker+Pack" alt="Wesley Sanchaz Sticker Pack" class="w-full h-auto rounded-lg mb-4">
+                        <h4 class="text-xl font-semibold text-white mb-2">Sticker Pack</h4>
+                        <p class="text-gray-300 text-lg mb-4">$10.00</p>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition-colors">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tour Section (Placeholder) -->
+        <section id="tour" class="py-16 px-6 md:px-12 bg-gray-900">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-bold text-white mb-12">Upcoming Tour Dates</h2>
+                <div class="bg-gray-800 rounded-xl p-8 shadow-lg max-w-3xl mx-auto">
+                    <p class="text-xl text-gray-300 mb-4">No tour dates announced at this time. Please check back soon!</p>
+                    <p class="text-lg text-gray-400">Sign up for our newsletter to be the first to know about new dates.</p>
+                    <button class="mt-6 bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition-colors">Join Newsletter</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section (Placeholder) -->
+        <section id="about" class="py-16 px-6 md:px-12">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-bold text-white mb-12">About Wesley Sanchaz</h2>
+                <div class="bg-gray-800 rounded-xl p-8 shadow-lg max-w-4xl mx-auto text-left">
+                    <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                        Wesley Sanchaz is a groundbreaking artist known for his unique blend of soulful melodies, intricate rhythms, and profound lyrical storytelling. Hailing from [Artist's Hometown], Wesley began his musical journey at a young age, drawing inspiration from a diverse range of genres including R&B, electronic, and alternative pop.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                        His debut album, "Echoes of Tomorrow," released in [Year], quickly garnered critical acclaim and a dedicated fanbase, establishing him as a distinctive voice in the contemporary music scene. Wesley's music often explores themes of introspection, hope, and the complexities of human connection, resonating deeply with listeners worldwide.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        Beyond his studio work, Wesley is celebrated for his captivating live performances, where he brings his music to life with raw emotion and dynamic energy. Stay tuned for more music and tour announcements!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section (Placeholder) -->
+        <section id="contact" class="py-16 px-6 md:px-12 bg-gray-900">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-bold text-white mb-12">Contact Us</h2>
+                <div class="bg-gray-800 rounded-xl p-8 shadow-lg max-w-xl mx-auto">
+                    <p class="text-lg text-gray-300 mb-6">
+                        For inquiries, collaborations, or fan mail, please reach out to us.
+                    </p>
+                    <form class="space-y-4">
+                        <div>
+                            <input type="text" placeholder="Your Name" class="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-purple-500">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Your Email" class="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-purple-500">
+                        </div>
+                        <div>
+                            <textarea placeholder="Your Message" rows="5" class="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-purple-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition-colors">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8 px-6 md:px-12 mt-auto">
+        <div class="container mx-auto text-center md:flex md:justify-between md:items-center">
+            <p class="mb-4 md:mb-0">&copy; 2025 Wesley Sanchaz. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mb-4 md:mb-0">
+                <a href="#" class="hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.007-.532A8.318 8.318 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012 10.772v.058a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.844"></path>
+                    </svg>
+                </a>
+                <a href="#" class="hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a href="#" class="hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.002 3.797.048.853.04 1.48.174 2.041.364.424.147.759.299 1.099.487.85.429 1.475 1.054 1.908 1.907.189.34.341.675.488 1.099.19.561.324 1.187.365 2.04.046 1.013.048 1.371.048 3.797 0 2.429-.002 2.783-.048 3.796-.04.853-.174 1.48-.364 2.041-.147.424-.299.759-.487 1.099-.429.85-1.054 1.475-1.907 1.908-.34.189-.675.341-1.099.488-.561.19-1.187.324-2.04.365-1.013.045-1.371.048-3.797.048s-2.783-.002-3.796-.048c-.853-.04-1.48-.174-2.041-.364-.424-.147-.759-.299-1.099-.487-.85-.429-1.475-1.054-1.907-1.907-.189-.34-.341-.675-.488-1.099-.19-.561-.324-1.187-.365-2.04-.047-1.013-.048-1.371-.048-3.797s.002-2.783.048-3.796c.04-.853.174-1.48.364-2.041.147-.424.299-.759.487-1.099.429-.85 1.054-1.475 1.907-1.908.34-.189.675-.341 1.099-.488.19-.561.324-1.187.365-2.04.047-1.013.048-1.371.048-3.797ZM12 6.5c-3.032 0-5.5 2.468-5.5 5.5s2.468 5.5 5.5 5.5 5.5-2.468 5.5-5.5-2.468-5.5-5.5-5.5Z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="hover:text-white transition-colors text-sm">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors text-sm">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('-translate-x-full');
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+        closeMobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+        // Close mobile menu when clicking outside (optional, but good for UX)
+        // document.addEventListener('click', function(event) {
+        //     if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target) && !mobileMenu.classList.contains('-translate-x-full')) {
+        //         toggleMobileMenu();
+        //     }
+        // });
+    </script>
+</body>
+</html>
